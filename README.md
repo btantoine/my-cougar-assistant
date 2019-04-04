@@ -4,18 +4,36 @@
 
  - make sure to have npm and nodejs installed
 
-### install
+Install
 npm install -g jovo-cli
 
-### create new project
+Create new project
 jovo new <directory>
 
-### build the project
+Build the project
 cd <directory>
 jovo build
 
-### deploy the project
+Deploy the project
 jovo deploy
 
-### run the project
+Run the project
 jovo run
+
+## How to link the project to Amazon Alexa
+
+Create a Alexa Skill Kit account : https://developer.amazon.com/alexa-skills-kit
+Go to skill
+And create a new skill
+Copy the skill ID
+Paste the skill id in the file qpp.json
+```
+{
+	"alexaSkill": {
+		"nlu": {
+			"name": "alexa"
+		},
+	    "skillId": "Votre skillId",
+	    "askProfile": "default"
+	}}
+```
