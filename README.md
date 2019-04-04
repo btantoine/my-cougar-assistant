@@ -27,6 +27,7 @@ Go to skill
 And create a new skill
 Copy the skill ID
 Paste the skill id in the file qpp.json
+
 ```
 {
 	"alexaSkill": {
@@ -35,5 +36,6 @@ Paste the skill id in the file qpp.json
 		},
 	    "skillId": "Votre skillId",
 	    "askProfile": "default"
-	}}
+	}
+}
 ```
