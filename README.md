@@ -22,11 +22,11 @@ jovo run
 
 ## How to link the project to Amazon Alexa
 
-Create a Alexa Skill Kit account : https://developer.amazon.com/alexa-skills-kit
-Go to skill
-And create a new skill
-Copy the skill ID
-Paste the skill id in the file qpp.json
+- Create a Alexa Skill Kit account : https://developer.amazon.com/alexa-skills-kit
+- Go to skill
+- And create a new skill
+- Copy the skill ID
+-Paste the skill id in the file qpp.json
 
 ```
 {
@@ -39,3 +39,5 @@ Paste the skill id in the file qpp.json
 	}
 }
 ```
+
+On the Alexa plateform you can press the test button to test your project
