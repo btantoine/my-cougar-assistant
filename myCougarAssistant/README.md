@@ -1,20 +1,43 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+# my cougar assistant
 
-<p align="center">Templates for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+## How to install and use jovo framework
 
-<p align="center">
-<a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
-<a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
-<br/>
+ - make sure to have npm and nodejs installed
 
-# Template: Hello World
+Install
+- npm install -g jovo-cli
 
-Jovo Sample Voice App with a simple "Hello World!" + asking for the user's name. This is the default template for the `jovo new` command:
+Create new project
+- jovo new <directory>
 
-```sh
-$ jovo new <directory>
+Build the project
+- cd <directory>
+- jovo build
 
-## Alternative
-$ jovo new <directory> --template helloworld
+Deploy the project
+- jovo deploy
+
+Run the project
+- jovo run
+
+## How to link the project to Amazon Alexa
+
+- Create a Alexa Skill Kit account : https://developer.amazon.com/alexa-skills-kit
+- Go to skill
+- And create a new skill
+- Copy the skill ID
+- Paste the skill id in the file qpp.json
+
+```
+{
+	"alexaSkill": {
+		"nlu": {
+			"name": "alexa"
+		},
+	    "skillId": "Votre skillId",
+	    "askProfile": "default"
+	}
+}
 ```
 
+On the Alexa plateform you can press the test button to test your project
