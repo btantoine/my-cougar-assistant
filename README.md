@@ -30,7 +30,7 @@ Or you can test quickly with :
 - Go to skill
 - And create a new skill
 - Copy the skill ID
-- Paste the skill id in the file qpp.json
+- Paste the skill id in the file app.json (old version)
 
 ```
 {
