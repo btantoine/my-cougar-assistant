@@ -35,14 +35,16 @@ app.setHandler({
 
     MyNameIsIntent() {
         // We have to save the name in db (this.$inputs.name.value)
-        // this.ask('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-        // this.tell('What do you want to know ?');
         this.$speech.addText('Hey ' + this.$inputs.name.value + ', nice to meet you!')
             .addBreak('300ms')
             .addText('What do you want to know ?');
 
-        this.tell(this.$speech);
+        this.ask(this.$speech);
 
+    },
+
+    OpenningTimeOffice() {
+        this.tell('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // tell -> end of the discussion
     },
 });
 

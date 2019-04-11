@@ -26,14 +26,30 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "OpenningTimeOffice",
+			"phrases": [
+				"{name}",
+				"When the {office} is open",
+				"At what time {office}",
+				"When can I go to {office}"
+			],
+			"inputs": [
+				{
+					"name": "office",
+					"type": "OfficeInputData"
+				}
+			]
 		}
 	],
 	"inputTypes": [
 	    {
-	        "name": "NameInputData",
+	        "name": "OfficeInputData",
 	        "values": [
 	            {
-	                "value": "Value"
+	                "value": "Library",
+	                "value": "USU"
 	            }
 	        ]
 	    }
