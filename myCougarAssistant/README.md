@@ -32,6 +32,8 @@ Or you can test quickly with :
 - Copy the skill ID
 - Paste the skill id in the file project.json
 
+https://developer.amazon.com/fr/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html
+
 ```
 {
     alexaSkill: {
