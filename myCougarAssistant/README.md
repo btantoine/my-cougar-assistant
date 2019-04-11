@@ -20,6 +20,10 @@ Deploy the project
 Run the project
 - jovo run
 
+Or you can test quickly with :
+- jovo run
+- and click on the webhook url
+
 ## How to link the project to Amazon Alexa
 
 - Create a Alexa Skill Kit account : https://developer.amazon.com/alexa-skills-kit
