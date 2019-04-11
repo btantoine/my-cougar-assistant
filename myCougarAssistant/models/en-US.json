@@ -1,5 +1,5 @@
 {
-	"invocation": "my cougar app",
+	"invocation": "my cougar assistant",
 	"intents": [
 		{
 			"name": "HelloWorldIntent",
@@ -28,11 +28,11 @@
 			]
 		},
 		{
-			"name": "OpenningTimeOffice",
+			"name": "OpenningTimeOfficeIntent",
 			"phrases": [
-				"{name}",
+				"{office}",
 				"When the {office} is open",
-				"At what time {office}",
+				"At what time the {office} open",
 				"When can I go to {office}"
 			],
 			"inputs": [
@@ -48,9 +48,11 @@
 	        "name": "OfficeInputData",
 	        "values": [
 	            {
-	                "value": "Library",
+	                "value": "Library"
+				},
+				{
 	                "value": "USU"
-	            }
+				}
 	        ]
 	    }
 	],

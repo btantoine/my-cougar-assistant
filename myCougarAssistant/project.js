@@ -5,6 +5,7 @@
 module.exports = {
     alexaSkill: {
        nlu: 'alexa',
+        skillId: 'skillId'
     },
     googleAction: {
        nlu: 'dialogflow',

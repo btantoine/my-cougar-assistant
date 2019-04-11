@@ -43,7 +43,7 @@ app.setHandler({
 
     },
 
-    OpenningTimeOffice() {
+    OpenningTimeOfficeIntent() {
         this.tell('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // tell -> end of the discussion
     },
 });
