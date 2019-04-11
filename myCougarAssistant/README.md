@@ -26,17 +26,17 @@ Run the project
 - Go to skill
 - And create a new skill
 - Copy the skill ID
-- Paste the skill id in the file qpp.json
+- Paste the skill id in the file project.json
 
 ```
 {
-	"alexaSkill": {
-		"nlu": {
-			"name": "alexa"
-		},
-	    "skillId": "Votre skillId",
-	    "askProfile": "default"
-	}
+    alexaSkill: {
+        nlu: {
+            name: 'alexa',
+        },
+        skillId: '<your-skill-id>',
+        askProfile: '<your-ask-cli-profile>'
+    },
 }
 ```
 

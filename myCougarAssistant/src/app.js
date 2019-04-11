@@ -30,11 +30,13 @@ app.setHandler({
     },
 
     HelloWorldIntent() {
-        this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
+        this.ask('Hello World! What\'s your name?', 'Please tell me your name.'); // with "," the system choose between the first or the second sentence (random)
     },
 
     MyNameIsIntent() {
+        // We have to save the name in db (this.$inputs.name.value)
         this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
+        // this.tell('What do you want to know ?');
     },
 });
 
