@@ -43,5 +43,6 @@ Or you can test quickly with :
     },
 }
 ```
+https://www.jovo.tech/docs/project-js
 
 On the Alexa plateform you can press the test button to test your project

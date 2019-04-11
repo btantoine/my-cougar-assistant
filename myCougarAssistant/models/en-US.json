@@ -28,6 +28,16 @@
 			]
 		}
 	],
+	"inputTypes": [
+	    {
+	        "name": "NameInputData",
+	        "values": [
+	            {
+	                "value": "Value"
+	            }
+	        ]
+	    }
+	],
 	"alexa": {
 		"interactionModel": {
 			"languageModel": {
