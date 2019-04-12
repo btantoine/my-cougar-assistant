@@ -62,7 +62,7 @@ Build the project
 - jovo build
 
 Deploy the project
-- jovo deploy --plateform alexaSkill
+- jovo deploy --platform alexaSkill
 
 Run the project
 - jovo run
