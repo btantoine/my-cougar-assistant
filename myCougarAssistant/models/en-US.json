@@ -41,6 +41,21 @@
 					"type": "OfficeInputData"
 				}
 			]
+		},
+		{
+			"name": "WhereIsOfficeIntent",
+			"phrases": [
+				"{buildingOrRoom}",
+				"Where is the {buildingOrRoom}",
+				"Where can I find the {buildingOrRoom}",
+				"How to go to {buildingOrRoom}"
+			],
+			"inputs": [
+				{
+					"name": "buildingOrRoom",
+					"type": "OfficeOrRoomInputData"
+				}
+			]
 		}
 	],
 	"inputTypes": [
@@ -52,6 +67,23 @@
 				},
 				{
 	                "value": "USU"
+				}
+	        ]
+	    },
+	    {
+	        "name": "OfficeOrRoomInputData",
+	        "values": [
+				{
+	                "value": "USU"
+				},
+				{
+	                "value": "Room 4001"
+				},
+				{
+	                "value": "Room 4002"
+				},
+				{
+	                "value": "Room 4003"
 				}
 	        ]
 	    }

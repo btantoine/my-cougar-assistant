@@ -49,9 +49,19 @@ app.setHandler({
     OpenningTimeOfficeIntent() {
         // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
             // use nameVariableReturn;
-            this.tell('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // tell -> end of the discussion
+            this.ask('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // ask -> continue the discussion
         // })
 
+    },
+
+    WhereIsOfficeIntent() {
+        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
+            // use nameVariableReturn;
+            if (this.$inputs.buildingOrRoom.value == "USU")
+                this.tell('The ' + this.$inputs.buildingOrRoom.value + ' is the building next to the library'); // tell -> end of the discussion
+            else
+                this.tell('The ' + this.$inputs.buildingOrRoom.value + ' is in the fourth floor of the library'); // tell -> end of the discussion
+        // })
     },
 });
 
