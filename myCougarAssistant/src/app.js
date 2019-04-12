@@ -12,6 +12,9 @@ const { FileDb } = require('jovo-db-filedb');
 
 const app = new App();
 
+const Api = require('./data-connector');
+const dataConnector = new Api.Test();
+
 app.use(
     new Alexa(),
     new GoogleAssistant(),
@@ -44,7 +47,11 @@ app.setHandler({
     },
 
     OpenningTimeOfficeIntent() {
-        this.tell('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // tell -> end of the discussion
+        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
+            // use nameVariableReturn;
+            this.tell('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // tell -> end of the discussion
+        // })
+
     },
 });
 
