@@ -56,7 +56,16 @@
 					"type": "OfficeOrRoomInputData"
 				}
 			]
+		},
+		{
+			"name": "NextEventsIntent",
+			"phrases": [
+				"When is the next event",
+				"where will happened the next event",
+				"when is the next event"
+			]
 		}
+
 	],
 	"inputTypes": [
 	    {

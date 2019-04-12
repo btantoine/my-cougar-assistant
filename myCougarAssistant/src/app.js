@@ -58,9 +58,16 @@ app.setHandler({
         // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
             // use nameVariableReturn;
             if (this.$inputs.buildingOrRoom.value == "USU")
-                this.tell('The ' + this.$inputs.buildingOrRoom.value + ' is the building next to the library'); // tell -> end of the discussion
+                this.ask('The ' + this.$inputs.buildingOrRoom.value + ' is the building next to the library');
             else
-                this.tell('The ' + this.$inputs.buildingOrRoom.value + ' is in the fourth floor of the library'); // tell -> end of the discussion
+                this.ask('The ' + this.$inputs.buildingOrRoom.value + ' is in the fourth floor of the library');
+        // })
+    },
+
+    NextEventsIntent() {
+        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
+            // use nameVariableReturn;
+                this.tell('The next event is cougar party at 6pm at the usu today'); // tell -> end of the discussion
         // })
     },
 });
