@@ -1,0 +1,19 @@
+{
+   "name": "myCouagarAssistantDB",
+   "version": "0.0.0",
+   "description": "Access to db",
+   "main": "server.js",
+   "dependencies": {
+      "express": "^4.14.0",
+      "body-parser": "^1.15.2",
+      "mssql": "^3.3.0",
+      "mysql": "^2.13.0"
+   },
+   "scripts": {
+      "start": "node server.js"
+   },
+   "author": {
+      "name": "<Your Name>",
+      "email": "<Your Email>"
+   }
+}
