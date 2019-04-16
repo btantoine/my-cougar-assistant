@@ -40,7 +40,7 @@ app.setHandler({
         // We have to save the name in db (this.$inputs.name.value)
         this.$speech.addText('Hey ' + this.$inputs.name.value + ', nice to meet you!')
             .addBreak('300ms')
-            .addText('What do you want to know ?');
+            .addText('How are you today ?');
 
         this.ask(this.$speech);
 
@@ -69,6 +69,22 @@ app.setHandler({
             // use nameVariableReturn;
                 this.tell('The next event is cougar party at 6pm at the usu today'); // tell -> end of the discussion
         // })
+    },
+
+    HowAreYouIntent() {
+        this.$speech.addText('Hey yes, I have a good time today, I am learning a lot of thing about CSUSM')
+            .addBreak('300ms')
+            .addText('And you, how are you ?');
+
+        this.ask(this.$speech);
+    },
+    
+    HowAreYouResponseIntent() {
+        this.$speech.addText('Oh it\'s great, I am happy for you')
+            .addBreak('300ms')
+            .addText('And, what do you want to know ?');
+
+        this.ask(this.$speech);
     },
 });
 

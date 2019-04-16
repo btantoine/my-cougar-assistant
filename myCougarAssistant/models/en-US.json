@@ -32,8 +32,12 @@
 			"phrases": [
 				"{office}",
 				"When the {office} is open",
+				"When the {office} is open today",
+				"I would like to know when the {office} is open today",
 				"At what time the {office} open",
-				"When can I go to {office}"
+				"I would like to kow at what time the {office} open",
+				"When can I go to {office}",
+				"I would like to know when can I go to {office}"
 			],
 			"inputs": [
 				{
@@ -47,8 +51,11 @@
 			"phrases": [
 				"{buildingOrRoom}",
 				"Where is the {buildingOrRoom}",
+				"I would like to know where is the {buildingOrRoom}",
 				"Where can I find the {buildingOrRoom}",
-				"How to go to {buildingOrRoom}"
+				"I would like to know where can I find the {buildingOrRoom}",
+				"How to go to {buildingOrRoom}",
+				"I would like to know how to go to {buildingOrRoom}"
 			],
 			"inputs": [
 				{
@@ -63,6 +70,24 @@
 				"When is the next event",
 				"where will happened the next event",
 				"when is the next event"
+			]
+		},
+		{
+			"name": "HowAreYouIntent",
+			"phrases": [
+				"How are you today",
+				"Do you have a good time",
+				"What's up",
+				"Do you have a good day"
+			]
+		},
+		{
+			"name": "HowAreYouResponseIntent",
+			"phrases": [
+				"I'm fine today",
+				"I have a good time too",
+				"I'm ok",
+				"It's a great day today"
 			]
 		}
 
@@ -84,6 +109,9 @@
 	        "values": [
 				{
 	                "value": "USU"
+				},
+				{
+	                "value": "library"
 				},
 				{
 	                "value": "Room 4001"
