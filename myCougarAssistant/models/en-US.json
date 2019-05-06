@@ -47,7 +47,7 @@
 			]
 		},
 		{
-			"name": "WhereIsOfficeIntent",
+			"name": "LocationsOfficeIntent",
 			"phrases": [
 				"{buildingOrRoom}",
 				"Where is the {buildingOrRoom}",

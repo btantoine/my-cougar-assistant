@@ -22,8 +22,22 @@ db.connect((err) => {
 
 const app = express();
 
-// Select posts
+// Select the hour of a building
 app.get('/api/getOpenningTimeBuildingInfo/:libelle', (req, res) => {
+    let sql = 'SELECT * FROM Building';
+    var result = "";
+    let query = db.query(sql, (err, results) => {
+        if(err) throw err;
+        results.forEach(function(element) {
+            if (element.Name.toUpperCase() == req.params.libelle.toUpperCase())
+                result = element.Hours;
+          });
+        res.send(result);
+    });
+});
+
+// Select the location of a building
+app.get('/api/getLocationBuildingInfo/:libelle', (req, res) => {
     let sql = 'SELECT * FROM Building';
     var result = "";
     let query = db.query(sql, (err, results) => {
@@ -31,7 +45,7 @@ app.get('/api/getOpenningTimeBuildingInfo/:libelle', (req, res) => {
         if(err) throw err;
         results.forEach(function(element) {
             if (element.Name.toUpperCase() == req.params.libelle.toUpperCase())
-                result = element.Hours;
+                result = element.Location;
           });
         res.send(result);
     });

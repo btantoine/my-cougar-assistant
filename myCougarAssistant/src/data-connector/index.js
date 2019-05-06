@@ -22,9 +22,19 @@ class Test {
         })
     }
 
-    getOpenningTimeOfficeInfo(callback){
+    getOpenningTimeOfficeInfo(libelle, callback){
         // this._request('get', this.site_url, (answer) => {
-        this._request('get', "http://localhost:8080/api/getOpenningTimeBuildingInfo/library", (answer) => {
+        this._request('get', "http://localhost:8080/api/getOpenningTimeBuildingInfo/" + libelle, (answer) => {
+            // const pkg = JSON.parse(answer);
+            // answer = pkg;
+            console.log(answer);
+            callback(answer);
+        })
+    }
+
+    getLocationOfficeInfo(libelle, callback){
+        // this._request('get', this.site_url, (answer) => {
+        this._request('get', "http://localhost:8080/api/getLocationBuildingInfo/" + libelle, (answer) => {
             // const pkg = JSON.parse(answer);
             // answer = pkg;
             console.log(answer);
