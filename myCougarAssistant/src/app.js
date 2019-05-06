@@ -33,7 +33,7 @@ app.setHandler({
     },
 
     HelloWorldIntent() {
-        this.ask('Hello World! What\'s your name?', 'Please tell me your name.'); // with "," the system choose between the first or the second sentence (random)
+        this.ask('Hello ! What\'s your name?', 'Please tell me your name.'); // with "," the system choose between the first or the second sentence (random)
     },
 
     MyNameIsIntent() {
@@ -47,10 +47,10 @@ app.setHandler({
     },
 
     OpenningTimeOfficeIntent() {
-        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
-            // use nameVariableReturn;
-            this.ask('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // ask -> continue the discussion
-        // })
+        dataConnector.getOpenningTimeOfficeInfo((hours) => {
+            // this.ask('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm');
+            this.ask('The ' + this.$inputs.office.value + ' will be open at ' + JSON.stringify(hours));
+        })
 
     },
 
@@ -67,7 +67,7 @@ app.setHandler({
     NextEventsIntent() {
         // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
             // use nameVariableReturn;
-                this.tell('The next event is cougar party at 6pm at the usu today'); // tell -> end of the discussion
+                this.ask('The next event is cougar party at 6pm at the usu today');
         // })
     },
 
@@ -80,11 +80,15 @@ app.setHandler({
     },
     
     HowAreYouResponseIntent() {
-        this.$speech.addText('Oh it\'s great, I am happy for you')
+        this.$speech.addText('Oh it\'s great, I am happy for you.')
             .addBreak('300ms')
             .addText('And, what do you want to know ?');
 
         this.ask(this.$speech);
+    },
+
+    ThankYouIntent() {
+        this.tell('I am glad to help you, have a good day'); // tell -> end of the discussion
     },
 });
 

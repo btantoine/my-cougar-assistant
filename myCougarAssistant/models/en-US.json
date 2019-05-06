@@ -90,6 +90,13 @@
 				"It's a great day today",
 				"I am good"
 			]
+		},
+		{
+			"name": "ThankYouIntent",
+			"phrases": [
+				"Thank you",
+				"Thank you very much"
+			]
 		}
 
 	],
