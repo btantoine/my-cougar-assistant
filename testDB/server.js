@@ -1,61 +1,42 @@
-//Initiallising node modules
-var express = require("express");
-var bodyParser = require("body-parser");
-var sql = require("mssql");
-var app = express(); 
+//https://support.rackspace.com/how-to/installing-mysql-server-on-ubuntu/
+const express = require('express');
+const mysql = require('mysql');
 
-// Body Parser Middleware
-app.use(bodyParser.json()); 
-
-//CORS Middleware
-app.use(function (req, res, next) {
-    //Enabling CORS 
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, contentType,Content-Type, Accept, Authorization");
-    next();
+// Create connection
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root"
 });
 
-//Setting up server
- var server = app.listen(process.env.PORT || 8080, function () {
-    var port = server.address().port;
-    console.log("App now running on port", port);
- });
+// Connect
+db.connect((err) => {
+    if(err){
+        throw err;
+    }
+    console.log('MySql Connected...');
+    let sql = 'Use DBMCC;';
+    let query = db.query(sql, (err, results) => {
+    });
+});
 
-//Initiallising connection string
-var dbConfig = {
-    user:  "",
-    password: "",
-    server: "",
-    database: ""
-};
+const app = express();
 
-//Function to connect to database and execute query
-var  executeQuery = function(res, query){             
-     sql.connect(dbConfig, function (err) {
-         if (err) {   
-                     console.log("Error while connecting database :- " + err);
-                     res.send(err);
-                  }
-                  else {
-                         // create Request object
-                         var request = new sql.Request();
-                         // query to the database
-                         request.query(query, function (err, res) {
-                           if (err) {
-                                      console.log("Error while querying database :- " + err);
-                                      res.send(err);
-                                     }
-                                     else {
-                                       res.send(res);
-                                            }
-                               });
-                       }
-      });           
-}
+// Select posts
+app.get('/api/getOpenningTimeBuildingInfo/:libelle', (req, res) => {
+    let sql = 'SELECT * FROM Building';
+    var result = "";
+    let query = db.query(sql, (err, results) => {
+        console.log("ici");
+        if(err) throw err;
+        results.forEach(function(element) {
+            if (element.Name.toUpperCase() == req.params.libelle.toUpperCase())
+                result = element.Hours;
+          });
+        res.send(result);
+    });
+});
 
-//GET API
-app.get("/api/getOpenningTimeOfficeInfo", function(req , res){
-                var query = "select * from [table]";
-                executeQuery (res, query);
+app.listen('8080', () => {
+    console.log('Server started on port 8080');
 });
