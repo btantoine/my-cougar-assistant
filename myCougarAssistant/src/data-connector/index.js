@@ -41,6 +41,16 @@ class Test {
             callback(answer);
         })
     }
+
+    getNextEventInfo(callback){
+        // this._request('get', this.site_url, (answer) => {
+        this._request('get', "http://localhost:8080/api/getNextEventInfo/", (answer) => {
+            // const pkg = JSON.parse(answer);
+            // answer = pkg;
+            console.log(answer);
+            callback(answer);
+        })
+    }
 }
 
 module.exports = {

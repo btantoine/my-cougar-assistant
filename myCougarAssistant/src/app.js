@@ -67,10 +67,10 @@ app.setHandler({
     },
 
     NextEventsIntent() {
-        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
+        dataConnector.getNextEventInfo((DesciptionEvent) => {
             // use nameVariableReturn;
-                this.ask('The next event is cougar party at 6pm at the usu today');
-        // })
+                this.ask('The next event is ' + DesciptionEvent);
+        })
     },
 
     HowAreYouIntent() {

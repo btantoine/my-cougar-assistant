@@ -51,6 +51,15 @@ app.get('/api/getLocationBuildingInfo/:libelle', (req, res) => {
     });
 });
 
+// Select the next event
+app.get('/api/getNextEventInfo', (req, res) => {
+    let sql = 'SELECT * FROM Events';
+    let query = db.query(sql, (err, results) => {
+        if(err) throw err;
+        res.send(results[0].Description);
+    });
+});
+
 app.listen('8080', () => {
     console.log('Server started on port 8080');
 });
