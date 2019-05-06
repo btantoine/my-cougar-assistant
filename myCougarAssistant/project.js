@@ -5,7 +5,7 @@
 module.exports = {
     alexaSkill: {
        nlu: 'alexa',
-        skillId: 'your-skill-id'
+        skillId: 'amzn1.ask.skill.c85f7b54-aa0e-46b8-8e3e-da2731b193b6'
     },
     googleAction: {
        nlu: 'dialogflow',
