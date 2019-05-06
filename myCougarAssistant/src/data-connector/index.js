@@ -7,7 +7,7 @@ class Test {
     //   this.password = "";
     }
 
-    _request(method, url, callback, errorCallback){
+    _request(method, url, callback){
         var options = {
             'method': method,
             'uri': url,
@@ -20,19 +20,35 @@ class Test {
         .then((answer) => {
           callback(answer)
         })
-        .catch((err) => {
-          errorCallback(err)
+    }
+
+    getOpenningTimeOfficeInfo(libelle, callback){
+        // this._request('get', this.site_url, (answer) => {
+        this._request('get', "http://localhost:8080/api/getOpenningTimeBuildingInfo/" + libelle, (answer) => {
+            // const pkg = JSON.parse(answer);
+            // answer = pkg;
+            console.log(answer);
+            callback(answer);
         })
     }
 
-    getOpenningTimeOfficeInfo(callback, errorCallback){
+    getLocationOfficeInfo(libelle, callback){
         // this._request('get', this.site_url, (answer) => {
-        this._request('get', "http://localhost:8080/api/getOpenningTimeOfficeInfo", (answer) => {
-            const pkg = JSON.parse(answer);
-            answer = pkg;
-            callback(answer)
-        }, (err) => {
-          errorCallback(err)
+        this._request('get', "http://localhost:8080/api/getLocationBuildingInfo/" + libelle, (answer) => {
+            // const pkg = JSON.parse(answer);
+            // answer = pkg;
+            console.log(answer);
+            callback(answer);
+        })
+    }
+
+    getNextEventInfo(callback){
+        // this._request('get', this.site_url, (answer) => {
+        this._request('get', "http://localhost:8080/api/getNextEventInfo/", (answer) => {
+            // const pkg = JSON.parse(answer);
+            // answer = pkg;
+            console.log(answer);
+            callback(answer);
         })
     }
 }

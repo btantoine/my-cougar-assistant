@@ -54,7 +54,7 @@
 			]
 		},
 		{
-			"name": "WhereIsOfficeIntent",
+			"name": "LocationsOfficeIntent",
 			"phrases": [
 				"{buildingOrRoom}",
 				"Where is the {buildingOrRoom}",
@@ -97,6 +97,13 @@
 				"It's a great day today",
 				"I am good",
 				"good"
+			]
+		},
+		{
+			"name": "ThankYouIntent",
+			"phrases": [
+				"Thank you",
+				"Thank you very much"
 			]
 		}
 

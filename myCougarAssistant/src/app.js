@@ -33,7 +33,7 @@ app.setHandler({
     },
 
     HelloWorldIntent() {
-        this.ask('Hello World! What\'s your name?', 'Please tell me your name.'); // with "," the system choose between the first or the second sentence (random)
+        this.ask('Hello ! What\'s your name?', 'Please tell me your name.'); // with "," the system choose between the first or the second sentence (random)
     },
 
     MyNameIsIntent() {
@@ -59,28 +59,30 @@ app.setHandler({
     },
 
     OpenningTimeOfficeIntent() {
-        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
-            // use nameVariableReturn;
-            this.ask('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm'); // ask -> continue the discussion
-        // })
+        dataConnector.getOpenningTimeOfficeInfo(this.$inputs.office.value, (hours) => {
+            // this.ask('The ' + this.$inputs.office.value + ' will be open at 8am untill 8pm');
+            this.ask('The ' + this.$inputs.office.value + ' will be open at ' + JSON.stringify(hours));
+        })
 
     },
 
-    WhereIsOfficeIntent() {
-        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
-            // use nameVariableReturn;
-            if (this.$inputs.buildingOrRoom.value == "USU")
-                this.ask('The ' + this.$inputs.buildingOrRoom.value + ' is the building next to the library');
+    LocationsOfficeIntent() {
+        dataConnector.getLocationOfficeInfo(this.$inputs.buildingOrRoom.value, (LocationBuilding) => {
+            console.log(LocationBuilding);
+            if (this.$inputs.buildingOrRoom.value.toUpperCase() == "USU".toUpperCase())
+                this.ask('The ' + this.$inputs.buildingOrRoom.value + ' ' + JSON.stringify(LocationBuilding));
+            // this.ask('The ' + this.$inputs.buildingOrRoom.value + ' is the building next to the library');
             else
-                this.ask('The ' + this.$inputs.buildingOrRoom.value + ' is in the fourth floor of the library');
-        // })
+                this.ask('The ' + this.$inputs.buildingOrRoom.value + ' ' + JSON.stringify(LocationBuilding));
+            // this.ask('The ' + this.$inputs.buildingOrRoom.value + ' is in the fourth floor of the library');
+        })
     },
 
     NextEventsIntent() {
-        // dataConnector.nameFunction(nameVariable, (nameVariableReturn) => {
+        dataConnector.getNextEventInfo((DesciptionEvent) => {
             // use nameVariableReturn;
-                this.tell('The next event is cougar party at 6pm at the usu today'); // tell -> end of the discussion
-        // })
+                this.ask('The next event is ' + DesciptionEvent);
+        })
     },
 
     HowAreYouIntent() {
@@ -92,7 +94,7 @@ app.setHandler({
     },
     
     HowAreYouResponseIntent() {
-        this.$speech.addText('Oh it\'s great, I am happy for you')
+        this.$speech.addText('Oh it\'s great, I am happy for you.')
             .addBreak('300ms')
             .addText('And, what do you want to know ?');
 
@@ -103,6 +105,10 @@ app.setHandler({
     {
         this.$speech.addText('Hi! How may I help you today?');
         this.ask(this.$speech);
+    },
+    
+    ThankYouIntent() {
+        this.tell('I am glad to help you, have a good day'); // tell -> end of the discussion
     },
 });
 
