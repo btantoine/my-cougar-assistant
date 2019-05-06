@@ -29,7 +29,7 @@ app.use(
 
 app.setHandler({
     LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
+        return this.toIntent('OpeningIntent');
     },
 
     HelloWorldIntent() {
@@ -44,6 +44,18 @@ app.setHandler({
 
         this.ask(this.$speech);
 
+    },
+
+    GetDateIntent(){
+        var currentDate = new Date();
+
+        var date = currentDate.getDate();
+        var month = currentDate.getMonth(); //Careful Jan starts at 0 and not 1.
+        var year  = currentDate.getFullYear();
+
+        var dateString = date + "-" + (month + 1) + "-" + year;
+
+        this.tell(dateString);
     },
 
     OpenningTimeOfficeIntent() {
@@ -84,6 +96,12 @@ app.setHandler({
             .addBreak('300ms')
             .addText('And, what do you want to know ?');
 
+        this.ask(this.$speech);
+    },
+
+    OpeningIntent()
+    {
+        this.$speech.addText('Hi! How may I help you today?');
         this.ask(this.$speech);
     },
 });

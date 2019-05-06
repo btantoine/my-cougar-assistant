@@ -28,6 +28,13 @@
 			]
 		},
 		{
+			"name": "GetDateIntent",
+			"phrases":[
+				"What is the current date today",
+				"what is the current date today"
+			]
+		},
+		{
 			"name": "OpenningTimeOfficeIntent",
 			"phrases": [
 				"{office}",
@@ -88,7 +95,8 @@
 				"I have a good time too",
 				"I'm ok",
 				"It's a great day today",
-				"I am good"
+				"I am good",
+				"good"
 			]
 		}
 
