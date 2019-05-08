@@ -1,5 +1,5 @@
 {
-	"invocation": "my cougar assistant",
+	"invocation": "my cougar assistant", 
 	"intents": [
 		{
 			"name": "HelloWorldIntent",
@@ -31,7 +31,8 @@
 			"name": "GetDateIntent",
 			"phrases":[
 				"What is the current date today",
-				"what is the current date today"
+				"what is the current date today",
+				"What's todays date"
 			]
 		},
 		{
@@ -44,7 +45,9 @@
 				"At what time the {office} open",
 				"I would like to kow at what time the {office} open",
 				"When can I go to {office}",
-				"I would like to know when can I go to {office}"
+				"I would like to know when can I go to {office}",
+				"What time is the {office} open",
+				"When is the {office} open"
 			],
 			"inputs": [
 				{
@@ -53,6 +56,20 @@
 				}
 			]
 		},
+		{
+			"name": "GetWeatherIntent",
+			"phrases": [
+				"What's the weather like",
+				"weather"
+			]
+		},
+		{
+			"name": "WhatDayIntent",
+			"phrases": [
+				"day"
+			]
+		},
+		
 		{
 			"name": "LocationsOfficeIntent",
 			"phrases": [
@@ -78,6 +95,44 @@
 				"where will happened the next event",
 				"when is the next event"
 			]
+		},
+		{
+			"name": "WhatClassIntent",
+			"phrases": [
+				"What class do I have on {day}",
+				"What class do i have on {day}",
+				"what class do I have on {day}",
+				"what class do i have on {day}",
+				"what classes do i have on {day}",
+				"what are my classes on {day}"
+			],
+			"inputs":[
+				{
+					"name": "day",
+					"type": "DayInputData"
+				} 
+			]
+		},
+		{
+			"name": "TodaysClassIntent",
+			"phrases": [
+				"What are my classes today",
+				"Whats my schedule like today",
+				"Hows my day looking",
+				"Hows my day looking like",
+				"Whats my day looking like",
+				"Hows today looking like"
+			]
+		},
+		{
+			"name": "TomorrowsClassIntent",
+			"phrases": [
+				"What are my classes tomorrow",
+				"Whats tomorrows schedule like",
+				"Whats tomorrow looking like",
+				"Hows tomorrow looking",
+				"Hows tomorrow looking like"
+			]	
 		},
 		{
 			"name": "HowAreYouIntent",
@@ -139,7 +194,27 @@
 	                "value": "Room 4003"
 				}
 	        ]
-	    }
+		},
+		{
+			"name": "DayInputData",
+			"values":[
+				{
+					"value": "Monday"
+				},
+				{
+					"value": "Tuesday"
+				},
+				{
+					"value": "Wednesday"
+				},
+				{
+					"value": "Thursday"
+				},
+				{
+					"value": "Friday"
+				}
+			]
+		}
 	],
 	"alexa": {
 		"interactionModel": {
